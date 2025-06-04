@@ -5,11 +5,12 @@ import { apiConnector } from '../services/apiconnector';
 import { categories } from '../services/apis';
 import { getCatalogPageData } from '../services/operations/pageAndComponentData';
 import CatalogCard from '../components/core/Catalog/CatalogCard';
+import CourseSlider from '../components/core/Catalog/CourseSlider';
 
 
 const Catalog = () => {
     const Catalog = useParams();
-    cons [Desc,setDesc] = useState([]);
+    const [Desc,setDesc] = useState([]);
     const [CatalogPageData,setCatalogPageData] = useState(null);
     const [categoryID,setcategoryID] = useState(null);
     const [activeOption,setActiveOption] = useState(1);

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaAngleDoubleRight, FaChevronLeft } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import IconBtn from "../../../common/IconBtn";
 
 const VideoDetailsSlidebar = ({ setReviewModal }) => {
   const [activeStatus, setActiveStatus] = useState("");
@@ -63,7 +64,9 @@ const VideoDetailsSlidebar = ({ setReviewModal }) => {
             >
               <FaChevronLeft className="text-lg" />
             </button>
+            
             <h2 className="text-xl font-semibold">Course Content</h2>
+            <IconBtn text={"Review"} onclick={()=>{setReviewModal(true)}}/>
           </div>
         </div>
 

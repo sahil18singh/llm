@@ -10,8 +10,11 @@ import {
 } from '../slices/viewCourseSlice';
 import VideoDetailsSlidebar from '../components/core/ViewCourse/VideoDetailsSlidebar';
 import { Outlet } from 'react-router-dom';
+import ReviewModal from '../components/core/ViewCourse/ReviewModal';
+import { useState } from 'react';
 
 const ViewCourse = () => {
+  const [reviewModal, setReviewModal] = useState(false)
   const { courseId } = useParams();
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -23,7 +26,7 @@ const ViewCourse = () => {
       console.log('Fetched courseData:', courseData);
 
       if (!courseData || !courseData.courseDetails) {
-        console.error('❌ Course data is missing or incomplete');
+      //  console.error('❌ Course data is missing or incomplete');
         return;
       }
 
@@ -46,13 +49,16 @@ const ViewCourse = () => {
     <div className="flex w-full min-h-screen bg-black text-white">
       {/* Sidebar */}
       <div className="w-[300px] border-r border-gray-800">
-        <VideoDetailsSlidebar />
+        <VideoDetailsSlidebar setReviewModal={setReviewModal} />
       </div>
 
       {/* Main Content */}
       <div className="flex-1 p-4">
         <Outlet />
       </div>
+      {
+            reviewModal && <ReviewModal setReviewModal={setReviewModal} />
+      }
     </div>
   );
 };

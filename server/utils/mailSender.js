@@ -16,7 +16,8 @@ const mailSender = async (email, title, body) => {
             host: "smtp.gmail.com",
             auth: {
                 user: "sahilsingh1892007@gmail.com",
-                pass: "iavgaalbmmmbmobt",
+                // pass: "iavgaalbmmmbmobt",
+                pass: "tlnutzmxovwasvnx"
             },
         });
     
