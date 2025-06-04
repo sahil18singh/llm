@@ -1,7 +1,7 @@
 import { apiConnector } from "../apiconnector";
 import { studentEndpoints } from "../apis";
 import {toast} from "react-hot-toast"
-import rzplogo from "../../assets/rzplogo.png"
+
 
 
 const { COURSE_PAYMENT_API, COURSE_VERIFY_API, SEND_PAYMENT_SUCCESS_EMAIL_API } = studentEndpoints;
